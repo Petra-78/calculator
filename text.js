@@ -3,25 +3,30 @@ let num1 = "";
 let num2 = "";
 
 const add = function(a, b) {
-	let sum = a + b;
-    console.log(sum);
+	let sum = +a + +b;
+    lastInp.textContent = `${sum} ${opr}`;
+    num1 = sum;
+    num2 = "";
   
-  }
+}
 
-const subtract = function(num1, ...nums) {
-  let sub = num1;
-  for (const num of nums) {
-    sub -= num;
-  }
-  console.log (sub);
-  }
+const subtract = function(a, b) {
+  let sub = a - b
+    lastInp.textContent = `${sub} ${opr}`;
+    num1 = sub;
+    num2 = "";
+}
 
 const multiply = function(a, b) {
-  console.log (a * b);
+  lastInp.textContent = (a * b);
+  num1 = (a * b);
+  num2 = "";
 };
 
 const divide = function(a, b) {
-  console.log(a / b);
+  lastInp.textContent = (a / b);
+  num1 = (a / b);
+  num2 = "";
 }
 
 function operate(num1, operator, num2) {
@@ -39,6 +44,7 @@ function operate(num1, operator, num2) {
 
 let currentInp = document.querySelector(".input-current");
 let numbers = document.querySelectorAll(".number");
+let lastInp = document.querySelector(".input-last")
 
 numbers.forEach(function(number){
   number.addEventListener("click", () => {
@@ -53,14 +59,41 @@ numbers.forEach(function(number){
   });
 });
 
+
+
+
 let operators = document.querySelectorAll(".operator");
+
 operators.forEach(function(operator) {
   operator.addEventListener("click", () => {
+    if (opr === "") {
     opr = operator.textContent;
-    currentInp.textContent += ` ${opr} `;
+    lastInp.textContent += `${num1} ${opr} `;
+    currentInp.textContent = "";
+    } else {
+      operate(num1, opr, num2);
+      currentInp.textContent = "";
+    }
   });
 });
 
+
+let equalBtn = document.querySelector(".equal");
+equalBtn.addEventListener("click", function() {
+  operate(num1, opr, num2);
+  currentInp.textContent = "";
+})
+
+// clear all button clears the whole calculator
+let clearAll = document.querySelector(".clear-all");
+
+clearAll.addEventListener("click", function() {
+  num1 = "";
+  num2 = "";
+  opr = "";
+  currentInp.textContent = "";
+  lastInp.textContent = "";
+})
 
 
 
