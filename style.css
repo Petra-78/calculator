@@ -1,0 +1,81 @@
+body, div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+    margin: 0px;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+}
+
+.calculator-main {
+    flex-direction: column;
+    gap: 30px;
+    padding: 30px;
+    background-color: gray;
+    height: 80vh;
+    width: 400px;
+    border: solid darkgrey 3px;
+    border-radius: 15px;
+}
+
+.inputs {
+    flex-direction: column;
+    width: 100%;
+    height: 20%;
+    background-color: aliceblue;
+    border: darkgrey solid 3px;
+    border-radius: 10px;
+}
+
+.input-last, .input-current {
+    justify-content: end;
+    padding-right: 50px;
+    width: 100%;
+    height: 50%;
+}
+
+.grid-btns {
+    width: 100%;
+    height: 80%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    gap: 10px;
+}
+
+button {
+    margin: 0px;
+    padding: 20px;
+    font-size: 20px;
+    background-color: azure;
+    border: solid rgb(66, 66, 66) 2px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.delete, .clear-all {
+    grid-column: span 2;
+    background-color: rgb(255, 187, 187);
+}
+
+.operator, .decimal {
+    background-color: rgb(201, 227, 250);
+}
+
+
+/* hover effects on buttons */
+
+button:hover {
+    background-color: rgb(194, 206, 216);
+}
+.delete:hover, .clear-all:hover {
+    background-color: rgb(196, 143, 143);
+}
+
+.operator:hover, .decimal:hover {
+    background-color: rgb(144, 163, 180);
+}
