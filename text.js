@@ -27,3 +27,19 @@ const sum = function(arr) {
 const multiply = function(a, b) {
   console.log (a * b);
 };
+
+const divide = function(a, b) {
+  console.log(a / b);
+}
+
+function operate(num1, operator, num2) {
+  if (operator === "+") {
+    add(num1, num2);
+  } else if (operator === "-") {
+    subtract(num1, num2);
+  } else if (operator === "x") {
+    multiply(num1, num2)
+  } else if (operator === "/") {
+    divide(num1, num2);
+  }
+}
