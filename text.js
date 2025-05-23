@@ -1,6 +1,6 @@
 let opr = "";
-let num1 = 0;
-let num2 = 0;
+let num1 = "";
+let num2 = "";
 
 const add = function(a, b) {
 	let sum = a + b;
@@ -36,3 +36,32 @@ function operate(num1, operator, num2) {
     divide(num1, num2);
   }
 }
+
+let currentInp = document.querySelector(".input-current");
+let numbers = document.querySelectorAll(".number");
+
+numbers.forEach(function(number){
+  number.addEventListener("click", () => {
+    const digit = number.textContent;
+    if (opr === "") {
+      num1 += digit;
+      currentInp.textContent += `${digit}`;
+    } else {
+      num2 += digit;
+      currentInp.textContent += `${digit}`;
+    }
+  });
+});
+
+let operators = document.querySelectorAll(".operator");
+operators.forEach(function(operator) {
+  operator.addEventListener("click", () => {
+    opr = operator.textContent;
+    currentInp.textContent += ` ${opr} `;
+  });
+});
+
+
+
+
+// document.querySelector(".input-current").textContent = `${num1} ${opr} ${num2}`
