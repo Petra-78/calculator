@@ -1,4 +1,4 @@
-let operator = "";
+let opr = "";
 let num1 = 0;
 let num2 = 0;
 
@@ -16,14 +16,6 @@ const subtract = function(num1, ...nums) {
   console.log (sub);
   }
 
-
-const sum = function(arr) {
-  if (arr.length === 0) {
-    return 0;
-  }
-  return arr.reduce((a, b) => a + b, 0);
-};
-
 const multiply = function(a, b) {
   console.log (a * b);
 };
@@ -33,6 +25,7 @@ const divide = function(a, b) {
 }
 
 function operate(num1, operator, num2) {
+  opr = operator;
   if (operator === "+") {
     add(num1, num2);
   } else if (operator === "-") {
