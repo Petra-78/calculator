@@ -126,6 +126,7 @@ deleteBtn.addEventListener("click", () => {
     currentInp.textContent = delLast.join("");
     num1 = delLast.join("");
     opr = "";
+    
   } else {
     let delCurrent = currentInp.textContent.split("");
     delCurrent.pop();
