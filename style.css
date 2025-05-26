@@ -15,6 +15,7 @@ body {
     flex-direction: column;
     gap: 30px;
     padding: 30px;
+    margin: 0px;
     background-color: gray;
     height: 80vh;
     width: 400px;
@@ -36,6 +37,12 @@ body {
     padding-right: 50px;
     width: 100%;
     height: 50%;
+    font-size: 25px;
+    min-height: 50px;
+}
+
+.input-current {
+    font-size: 40px;
 }
 
 .grid-btns {
@@ -78,4 +85,34 @@ button:hover {
 
 .operator:hover, .decimal:hover {
     background-color: rgb(144, 163, 180);
+}
+
+@media (max-width: 480px) {
+    body {
+        width: 100%;
+    }
+
+    .main {
+        padding: 0px;
+        width: 100%;
+        margin: 0px;
+    }
+
+    .calculator-main {
+        max-width: 470px;
+        height: auto;
+    }
+
+    .input-current {
+        font-size: 35px;
+    }
+
+    .grid-btns {
+        gap: auto;
+    }
+
+    button {
+        padding: 10px;
+        font-size: 18px;
+    }
 }
