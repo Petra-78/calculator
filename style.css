@@ -101,6 +101,7 @@ button:hover {
     .calculator-main {
         max-width: 470px;
         height: auto;
+        margin: 25px ;
     }
 
     .input-current {
