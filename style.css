@@ -30,6 +30,7 @@ body {
     background-color: aliceblue;
     border: darkgrey solid 3px;
     border-radius: 10px;
+    overflow: hidden;
 }
 
 .input-last, .input-current {
