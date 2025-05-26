@@ -4,29 +4,28 @@ let num2 = "";
 
 const add = function(a, b) {
 	let sum = +a + +b;
-    lastInp.textContent = `${sum} ${opr}`;
+    currentInp.textContent = sum;
     num1 = sum;
     num2 = "";
-  
 }
 
 const subtract = function(a, b) {
   let sub = a - b
-    lastInp.textContent = `${sub} ${opr}`;
+    currentInp.textContent = sub;
     num1 = sub;
     num2 = "";
 }
 
 const multiply = function(a, b) {
-  lastInp.textContent = (a * b);
-  num1 = (a * b);
-  num2 = "";
+    currentInp.textContent = (a * b);
+    num1 = (a * b);
+    num2 = "";
 };
 
 const divide = function(a, b) {
-  lastInp.textContent = (a / b);
-  num1 = (a / b);
-  num2 = "";
+    currentInp.textContent = (a / b);
+    num1 = (a / b);
+    num2 = "";
 }
 
 function operate(num1, operator, num2) {
@@ -59,9 +58,6 @@ numbers.forEach(function(number){
   });
 });
 
-
-
-
 let operators = document.querySelectorAll(".operator");
 
 operators.forEach(function(operator) {
@@ -72,17 +68,18 @@ operators.forEach(function(operator) {
     currentInp.textContent = "";
     } else {
       operate(num1, opr, num2);
-      currentInp.textContent = "";
+      opr = operator.textContent;
+      if (opr === "=") {
+      lastInp.textContent = "";
+      opr = "";
+      } else {
+        lastInp.textContent = `${num1} ${opr}`;
+        currentInp.textContent = "";
+      }
     }
   });
 });
 
-
-let equalBtn = document.querySelector(".equal");
-equalBtn.addEventListener("click", function() {
-  operate(num1, opr, num2);
-  currentInp.textContent = "";
-})
 
 // clear all button clears the whole calculator
 let clearAll = document.querySelector(".clear-all");
@@ -95,6 +92,3 @@ clearAll.addEventListener("click", function() {
   lastInp.textContent = "";
 })
 
-
-
-// document.querySelector(".input-current").textContent = `${num1} ${opr} ${num2}`
