@@ -105,6 +105,11 @@ button:hover {
         margin: 25px ;
     }
 
+    .inputs {
+        max-width: 70vw;
+        overflow: hidden;
+    }
+
     .input-current {
         font-size: 35px;
     }
